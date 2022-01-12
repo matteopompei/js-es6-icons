@@ -133,8 +133,7 @@ function genSchede(array) {
 genSchede(iconsArr);
 
 filter.addEventListener("change", function(){
-	console.log(filter.value);
-	switch (filter.value) {
+	switch (this.value) {
 		case "all":
 			container.innerHTML = "";
 			genSchede(iconsArr);
