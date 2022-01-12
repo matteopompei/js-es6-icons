@@ -1,4 +1,4 @@
-[
+let iconsArr = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -112,3 +112,12 @@
 		color: 'blue'
 	}
 ];
+
+for (let i=0; i<iconsArr.length; i++) {
+	document.getElementsByTagName("main")[0].innerHTML += ` 
+		<div>
+			<i class="${iconsArr[i].family} ${iconsArr[i].prefix}${iconsArr[i].name} ${iconsArr[i].type}" style="color:${iconsArr[i].color}"></i>
+			<span class="icon-title">${iconsArr[i].name}</span>
+		</div>
+		`;
+}
