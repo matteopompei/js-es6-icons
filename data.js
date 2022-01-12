@@ -113,11 +113,17 @@ let iconsArr = [
 	}
 ];
 
-for (let i=0; i<iconsArr.length; i++) {
-	document.getElementsByTagName("main")[0].innerHTML += ` 
+let container = document.getElementsByTagName("main")[0];
+
+function genSchede() {
+	iconsArr.forEach((icon, i) => {
+		container.innerHTML += ` 
 		<div>
-			<i class="${iconsArr[i].family} ${iconsArr[i].prefix}${iconsArr[i].name} ${iconsArr[i].type}" style="color:${iconsArr[i].color}"></i>
-			<span class="icon-title">${iconsArr[i].name}</span>
+		<i class="${iconsArr[i].family} ${iconsArr[i].prefix}${iconsArr[i].name} ${iconsArr[i].type}" style="color:${iconsArr[i].color}"></i>
+		<span class="icon-title">${iconsArr[i].name}</span>
 		</div>
 		`;
+	});
 }
+
+genSchede();
