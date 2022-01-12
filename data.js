@@ -114,6 +114,7 @@ let iconsArr = [
 ];
 
 let container = document.getElementsByTagName("main")[0];
+let filter = document.getElementById("filtri");
 let animalArr = iconsArr.filter((element) => element.type == "animal");
 let vegetableArr = iconsArr.filter((element) => element.type == "vegetable");
 let userArr = iconsArr.filter((element) => element.type == "user");
@@ -130,5 +131,28 @@ function genSchede(array) {
 }
 
 genSchede(iconsArr);
+
+filter.addEventListener("change", function(){
+	console.log(filter.value);
+	switch (filter.value) {
+		case "all":
+			container.innerHTML = "";
+			genSchede(iconsArr);
+			break;
+		case "animal":
+			container.innerHTML = "";
+			genSchede(animalArr);
+			break;
+		case "vegetable":
+			container.innerHTML = "";
+			genSchede(vegetableArr);
+			break;
+		case "user":
+			container.innerHTML = "";
+			genSchede(userArr);
+			break;
+	}
+});
+
 
 
