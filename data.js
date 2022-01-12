@@ -114,16 +114,21 @@ let iconsArr = [
 ];
 
 let container = document.getElementsByTagName("main")[0];
+let animalArr = iconsArr.filter((element) => element.type == "animal");
+let vegetableArr = iconsArr.filter((element) => element.type == "vegetable");
+let userArr = iconsArr.filter((element) => element.type == "user");
 
-function genSchede() {
-	iconsArr.forEach((icon, i) => {
+function genSchede(array) {
+	array.forEach((icon, i) => {
 		container.innerHTML += ` 
 		<div>
-		<i class="${iconsArr[i].family} ${iconsArr[i].prefix}${iconsArr[i].name} ${iconsArr[i].type}" style="color:${iconsArr[i].color}"></i>
-		<span class="icon-title">${iconsArr[i].name}</span>
+		<i class="${array[i].family} ${array[i].prefix}${array[i].name} ${array[i].type}" style="color:${array[i].color}"></i>
+		<span class="icon-title">${array[i].name}</span>
 		</div>
 		`;
 	});
 }
 
-genSchede();
+genSchede(iconsArr);
+
+
